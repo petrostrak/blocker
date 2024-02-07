@@ -1,8 +1,8 @@
 build:
-	go build -o bin/blocker
+	@go build -o bin/blocker
 
 run: build
-	./bin/blocker
+	@./bin/blocker
 
 test:
-	go test -v ./...
+	@go test -v ./...
