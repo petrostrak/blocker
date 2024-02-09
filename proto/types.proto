@@ -35,6 +35,6 @@ message TxOutput {
 
 message Transcation {
     int32 version = 1;
-    repeated TxInput TxInputs = 2;
-    repeated TxOutput TxOutputs = 3;
+    repeated TxInput Inputs = 2;
+    repeated TxOutput Outputs = 3;
 }
