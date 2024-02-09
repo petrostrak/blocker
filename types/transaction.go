@@ -27,6 +27,9 @@ func VerifyTransaction(tx *proto.Transcation) bool {
 	for _, input := range tx.Inputs {
 		sig := crypto.SignatureFromBytes(input.Signarure)
 		pubKey := crypto.PublicKeyFromBytes(input.PublicKey)
+
+		// FIX: check this again after verification
+		input.Signarure = nil
 		if !sig.Verify(pubKey, HashTransaction(tx)) {
 			return false
 		}

@@ -1,12 +1,12 @@
 package types
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/petrostrak/blocker/crypto"
 	"github.com/petrostrak/blocker/proto"
 	"github.com/petrostrak/blocker/util"
+	"github.com/stretchr/testify/assert"
 )
 
 // My balance 100 coins
@@ -48,5 +48,5 @@ func TestNewTransaction(t *testing.T) {
 	sig := SignTransaction(fromPrivKey, tx)
 	input.Signarure = sig.Bytes()
 
-	fmt.Printf("%+v\n", tx)
+	assert.True(t, VerifyTransaction(tx))
 }
